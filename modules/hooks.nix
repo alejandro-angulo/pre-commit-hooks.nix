@@ -219,7 +219,7 @@ in
             mkOption {
               type = types.path;
               description = lib.mdDoc
-                "`prettier` binary path. E.g. if you want to use the `prettier` in `node_modules`, use `./node_modules/.bin/prettier`.";
+                "`prettier` binary path. E.g. if you want to use the `prettier` in `node_modules`, use `self.outPath + \"/node_modules/.bin/prettier\"`.";
               default = "${tools.prettier}/bin/prettier";
               defaultText = lib.literalExpression ''
                 "''${tools.prettier}/bin/prettier"
@@ -246,7 +246,7 @@ in
             mkOption {
               type = types.path;
               description = lib.mdDoc
-                "`eslint` binary path. E.g. if you want to use the `eslint` in `node_modules`, use `./node_modules/.bin/eslint`.";
+                "`eslint` binary path. E.g. if you want to use the `eslint` in `node_modules`, use `self.outPath + \"/node_modules/.bin/prettier\"`.";
               default = "${tools.eslint}/bin/eslint";
               defaultText = lib.literalExpression "\${tools.eslint}/bin/eslint";
             };
@@ -264,7 +264,7 @@ in
           binPath =
             mkOption {
               type = types.path;
-              description = lib.mdDoc "`rome` binary path. E.g. if you want to use the `rome` in `node_modules`, use `./node_modules/.bin/rome`.";
+              description = lib.mdDoc "`rome` binary path. E.g. if you want to use the `rome` in `node_modules`, use `self.outPath + \"/node_modules/.bin/prettier\"`.";
               default = "${pkgs.rome}/bin/rome";
               defaultText = "\${pkgs.rome}/bin/rome";
             };
